@@ -144,17 +144,15 @@ export default async function ProductPage({
                 </p>
               </div>
 
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
-                  Availability
-                </p>
+                          <div>
+                              <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
+                                  Availability
+                              </p>
 
-                <p className="mt-3 text-xl text-white">
-                  {product.inStock
-                    ? "Available"
-                    : "Out of Stock"}
-                </p>
-              </div>
+                              <p className="mt-3 text-xl text-white">
+                                  In Stock
+                              </p>
+                          </div>
             </div>
 
             {/* Price */}
