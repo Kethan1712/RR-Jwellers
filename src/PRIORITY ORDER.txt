@@ -1,0 +1,115 @@
+PRIORITY ORDER
+1. EDIT PRODUCT SYSTEM
+
+(Next immediate task)
+
+Currently:
+❌ edit button fake
+
+Need:
+✅ edit modal
+✅ edit form
+✅ update state
+
+2. DELETE CONFIRMATION
+
+Currently:
+❌ instant delete
+
+Need:
+✅ “Are you sure?”
+✅ safer UX
+
+3. SUPABASE SETUP
+
+VERY BIG milestone.
+
+This gives:
+✅ real database
+✅ permanent products
+✅ cloud storage
+✅ real image uploads
+✅ real authentication
+
+WITHOUT this:
+refresh = data gone.
+
+4. AUTHENTICATION
+
+Need:
+✅ admin login
+✅ protected routes
+✅ sessions
+
+So random users cannot access admin.
+
+5. REAL PRODUCT STORAGE
+
+Currently:
+products live in React state.
+
+Need:
+✅ products saved permanently
+✅ fetch from database
+✅ dynamic rendering
+
+6. MOBILE ADMIN OPTIMIZATION
+
+VERY important.
+
+Your father will mostly use:
+📱 mobile phone
+
+Need:
+✅ stacked layout
+✅ larger touch areas
+✅ easy uploads
+✅ responsive tables
+
+7. REAL IMAGE STORAGE
+
+Currently:
+preview only.
+
+Need:
+✅ cloud uploads
+✅ optimized images
+✅ permanent URLs
+
+8. PRODUCT EDITING WORKFLOW
+
+Need:
+✅ edit product
+✅ update image
+✅ toggle featured
+✅ publish/unpublish
+
+9. GOLD PRICE ENGINE
+
+Need:
+✅ real gold price updates
+✅ product recalculation support
+✅ manual override pricing
+
+10. ENQUIRY SYSTEM
+
+Need:
+✅ WhatsApp enquiry storage
+✅ custom requests
+✅ customer messages
+
+11. SEO + PERFORMANCE
+
+Need:
+✅ metadata
+✅ optimized loading
+✅ image optimization
+✅ fast rendering
+
+12. DEPLOYMENT
+
+Need:
+✅ Vercel deployment
+✅ production domain
+✅ SSL
+✅ live admin

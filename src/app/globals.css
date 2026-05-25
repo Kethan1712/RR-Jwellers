@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050816;
+  --gold: #d4af37;
+  --soft-gold: #f1d27a;
+  --white: #f5f3ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
