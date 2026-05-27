@@ -13,6 +13,27 @@ export default function ProductCard({
 }: ProductCardProps) {
     console.log(product);
 
+    // PRICE CALCULATION
+    const goldRate = 7450;
+
+    const weight =
+        Number(product.weight || 0);
+
+    const makingPercentage =
+        Number(
+            product.making_percentage || 0
+        );
+
+    const goldValue =
+        weight * goldRate;
+
+    const makingCharges =
+        (goldValue * makingPercentage) /
+        100;
+
+    const finalPrice =
+        goldValue + makingCharges;
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -72,7 +93,7 @@ export default function ProductCard({
                         </p>
 
                         <p className="mt-2 text-xl text-white">
-                            ₹{Number(product.price).toLocaleString("en-IN")}
+                            ₹{finalPrice.toLocaleString("en-IN")}
                         </p>
                     </div>
 

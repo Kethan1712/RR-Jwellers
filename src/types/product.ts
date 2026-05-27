@@ -16,7 +16,7 @@ export type MetalType =
 export interface Product {
   id: string;
 
-  slug: string;
+  slug?: string;
 
   name: string;
 
@@ -24,23 +24,25 @@ export interface Product {
 
   category: ProductCategory;
 
-  metal: MetalType;
+  metal?: string;
 
-  purity: string;
+  purity?: string;
 
-  weight: number;
+  weight?: string | number;
 
   price: number;
 
   makingCharges?: number;
 
-  image: string[];
+  making_percentage?: string;
+
+  image: string[] | string;
 
   featured?: boolean;
 
   bestseller?: boolean;
 
-  inStock: boolean;
+  inStock?: boolean;
 
   customisable?: boolean;
 

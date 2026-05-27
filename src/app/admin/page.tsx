@@ -44,7 +44,16 @@ async function checkUser() {
 
   const [productPrice, setProductPrice] =
     useState("");
+    const [productMetal, setProductMetal] =
+        useState("");
 
+    const [productPurity, setProductPurity] =
+        useState("");
+
+    const [productWeight, setProductWeight] =
+        useState("");
+    const [makingPercentage, setmakingPercentage] =
+        useState("");
   const [productStatus, setProductStatus] =
     useState("Published");
 
@@ -58,7 +67,8 @@ async function checkUser() {
     useState<number | null>(null);
 
   const [deleteIndex, setDeleteIndex] =
-    useState<number | null>(null);
+        useState<number | null>(null);
+
 
   useEffect(() => {
   fetchProducts();
@@ -476,21 +486,46 @@ if (checkingAuth) {
                   <option>Silver</option>
                 </select>
 
-                <select className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]">
-                  
-                  <option>Select Purity</option>
+                              <select
+                                  value={productPurity}
+                                  onChange={(e) =>
+                                      setProductPurity(e.target.value)
+                                  }
+                                  className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]"
+                              >
+                                  <option value="">
+                                      Select Purity
+                                  </option>
 
-                  <option>18K</option>
-                  <option>22K</option>
-                  <option>24K</option>
-                  <option>Silver 925</option>
-                </select>
+                                  <option>18K</option>
+                                  <option>22K</option>
+                                  <option>24K</option>
+                                  <option>Silver 925</option>
+                              </select>
+                              <select
+                                  value={productMetal}
+                                  onChange={(e) =>
+                                      setProductMetal(e.target.value)
+                                  }
+                                  className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]"
+                              >
+                                  <option value="">
+                                      Select Metal
+                                  </option>
 
-                <input
-                  type="text"
-                  placeholder="Weight in grams"
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]"
-                />
+                                  <option>Gold</option>
+
+                                  <option>Silver</option>
+                              </select>
+                              <input
+                                  type="text"
+                                  placeholder="Weight in grams"
+                                  value={productWeight}
+                                  onChange={(e) =>
+                                      setProductWeight(e.target.value)
+                                  }
+                                  className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]"
+                              />
 
                 <input
                   type="text"
@@ -500,7 +535,16 @@ if (checkingAuth) {
                     setProductPrice(e.target.value)
                   }
                   className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]"
-                />
+                              />
+                              <input
+                                  type="text"
+                                  placeholder="Making Percentage"
+                                  value={makingPercentage}
+                                  onChange={(e) =>
+                                      setmakingPercentage(e.target.value)
+                                  }
+                                  className="w-full rounded-xl border border-white/10 bg-[#0B0E1A] px-5 py-4 text-white outline-none transition focus:border-[#D4AF37]"
+                              />
 
                 <select
                   value={productStatus}
@@ -609,7 +653,13 @@ if (checkingAuth) {
                               newProduct.status,
 
                             image:
-                              newProduct.image,
+                                  newProduct.image,
+                              making_percentage: makingPercentage,
+                              metal: productMetal,
+
+                              purity: productPurity,
+
+                              weight: productWeight,
                           })
                           .eq(
                             "id",
@@ -642,7 +692,14 @@ if (checkingAuth) {
                                 newProduct.status,
 
                               image:
-                                newProduct.image,
+                                      newProduct.image,
+                                  making_percentage: makingPercentage,
+                                  metal: productMetal,
+
+                                  purity: productPurity,
+
+                                  weight: productWeight,
+                                 
                             },
                           ]);
 
@@ -661,6 +718,10 @@ if (checkingAuth) {
                     setProductStatus("Published");
                     setPreviewImage(null);
                     setImageFile(null);
+                    setProductMetal("");
+                   setProductPurity("");
+                                      setProductWeight("");
+                                      setmakingPercentage("");
                   }}
                   className="w-full rounded-xl bg-[#D4AF37] py-4 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-[#F1D27A]"
                 >
