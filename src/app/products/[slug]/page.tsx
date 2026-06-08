@@ -51,9 +51,7 @@ export default async function ProductPage({
 
     const makingPercentage =
         Number(
-            product.making_percentage ||
-            0
-        );
+            product.making_percentage ||0);
 
     const goldValue =
         weight * goldRate;
@@ -343,6 +341,7 @@ export default async function ProductPage({
                                         <ProductCard
                                             key={item.id}
                                             product={item}
+                                            goldRate={goldRate}
                                         />
                                     )
                                 )}

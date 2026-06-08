@@ -31,6 +31,7 @@ export default function CollectionPage({
 
     const [selectedPriceRange, setSelectedPriceRange] =
         useState("");
+    const [goldRate, setGoldRate] = useState(0);
 
     useEffect(() => {
         async function loadParams() {
@@ -165,7 +166,16 @@ export default function CollectionPage({
                     Number(a.price)
             );
         }
+        const { data: metalPrices } = await supabase
+            .from("metal_prices")
+            .select("*")
+            .single();
 
+        if (metalPrices) {
+            setGoldRate(
+                Number(metalPrices.gold_22k || 0)
+            );
+        }
         setProducts(sortedProducts);
     }
 
@@ -411,6 +421,7 @@ export default function CollectionPage({
                                     <ProductCard
                                         key={product.id}
                                         product={product}
+                                        goldRate={goldRate}
                                     />
                                 ))
 
